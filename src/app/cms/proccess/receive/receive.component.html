@@ -1,0 +1,39 @@
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col">
+      <h1 class="text-center">الحجز</h1>
+      <form  [formGroup]="formR"  >
+        <div class="form-group-sm" >
+          <lu-bar (submit)="saveForm()" (delete)="deleteForm()" (new)="newForm()" (isList)="changeShowType()"> </lu-bar>
+          <grid *ngIf="isList==true" [dataSource]="dataSource"  [columns]="columns" (recordClick)="onRecordDbClick($event)" (recordSelected)="onRecordSeleced($event)"></grid>
+          <div *ngIf="isList==false">
+                    <text-box inputType="number" name="code" formControlName="code" key="كودالحجز"> </text-box>
+
+                    <text-box inputType="number" name="patientcode" formControlName="patient"  key="كود المريض"> </text-box>
+                    <text-box inputType="textBox" name="name" formControlName="name" key="اسم المريض"> </text-box>
+
+                    <text-box inputType="mobile" name="mobile" formControlName="mobile" key="موبيل"> </text-box>
+
+                    <text-box inputType="radio"  name="period" [radioItems]="periodItems" formControlName="period" key="فترة"></text-box>
+                    <text-box inputType="check" name="immediately" formControlName="immediately" key="كشف مستعجل"> </text-box>
+                    <text-box inputType="date" name="meetingDate" formControlName="meetingDate" key="موعد الكشف "> </text-box>
+
+                    <text-box inputType="number" name="total" formControlName="total" key="الاجمالى"> </text-box>
+                    <text-box inputType="number" name="paid" formControlName="paid" key="المدفوع"> </text-box>
+                    <text-box inputType="number" name="rest" formControlName="rest" key="الباقى"> </text-box>
+                    <text-box inputType="textArea" name="note" formControlName="note" key="ملاحظات"> </text-box>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2">
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+﻿export enum InputTypes {
+    textBox,
+    textArea,
+    dateTime,
+    month,
+    day,
+    year,
+    dropDown,
+    searchSelecting,
+    checkBox,
+    radioButtons,
+    numbers,
+    floats,
+    percentageNumber,
+    percentageFloat,
+    currncy,
+    email,
+    url,
+    postCode,
+    phone,
+    mobile,
+    ranage,
+    submitButton,
+    resetButton
+
+}

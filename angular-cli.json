@@ -9,7 +9,18 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "../src/assets/images/portfolio/thumb/item4.jpg",
+        "../src/assets/images/portfolio/thumb/item2.jpg",
+        "../src/assets/images/portfolio/thumb/item1.jpg",
+        "../src/assets/images/portfolio/thumb/item3.jpg",
+        "../src/assets/images/portfolio/thumb/item5.jpg",
+        "../src/assets/images/portfolio/thumb/item6.jpg",
+        "../src/assets/images/team1.jpg",
+        "../src/assets/images/team2.jpg",
+        "../src/assets/images/team3.jpg",
+        "../src/assets/images/slider-bg.jpg",
+        "../src/assets/images/logo1.png"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,9 +29,20 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/primeng/resources/themes/omega/theme.css",
+        "../node_modules/primeng/resources/primeng.min.css",
+        "../node_modules/bootstrap3/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
+
       ],
-      "scripts": [],
+      "scripts": [
+        "../src/assets/js/jquery.js",
+        "../src/assets/js/bootstrap.min.js",
+        "../src/assets/js/jquery.isotope.min.js",
+        "../src/assets/js/jquery.prettyPhoto.js",
+        "../src/assets/js/main.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

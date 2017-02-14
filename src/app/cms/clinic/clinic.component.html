@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col">
+      <h1 class="text-center">الكشف</h1>
+      <form #form="ngForm" (onload)="ngLoad(form)">
+        <div class="form-group-sm">
+          <lu-bar (submit)="submitForm(form)" (delete)="reset()" (isList)="changeShowType()"></lu-bar>
+          <grid [isList]="isList" [dataSource]="dataSource" [columns]="columns"
+                (recordClick)="onRecordDbClick($event)" (recordSelected)="onRecordSeleced($event)"></grid>
+          <div *ngIf="isList==false">
+            <text-box inputType="textBox" name="code" [ngModel]="code" key="كود الكشف"></text-box>
+
+            <text-box inputType="textBox" name="procedure" [ngModel]="procedure" key="اجراء"></text-box>
+
+            <text-box inputType="textBox" name="complain" [ngModel]="complain" key="الشكوى"></text-box>
+
+            <text-box inputType="select" name="diseaseType" [selectItems]="diseaseTypeItem" [ngModel]="diseaseType" key="المرض"></text-box>
+
+            <text-box inputType="select" name="surgeryType" [selectItems]="surgeryTypeItem" [ngModel]="surgeryType" key="العملية"></text-box>
+
+
+            <text-box inputType="textArea" name="diagnosis" [ngModel]="diagnosis" key="الكشف"></text-box>
+
+            <text-box inputType="date" name="nextMeeting" [ngModel]="nextMeeting" key="الزيارة القادمة"></text-box>
+            <div class="col-md-12 col">
+            <h3 class="text-center">الروشتة</h3>
+
+           </div>
+            <prescription></prescription>
+           </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2">
+
+
+    </div>
+  </div>
+</div>

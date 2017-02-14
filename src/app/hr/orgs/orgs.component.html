@@ -1,0 +1,28 @@
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col">
+            <h1 class="text-center">الجهة</h1>
+            <form #form="ngForm" (onload)="ngLoad(form)" >
+                <div class="form-group-sm">
+                    <lu-bar (submit)="submitForm(form)" (delete)="reset()" (isList)="changeShowType()"> </lu-bar>
+                    <grid *ngIf="isList==true" [dataSource]="dataSource" header="list" [columns]="columns" (recordClick)="onRecordDbClick($event)" (recordSelected)="onRecordSeleced($event)"></grid>
+                    <div *ngIf="isList==false">
+                        <text-box inputType="textBox" name="code"  key="رمز" [ngModel]="code"> </text-box>
+                        <text-box inputType="textBox" name="name"  key="اسم" [ngModel]="name"> </text-box>
+                        <text-box inputType="check" name="status"  key="حالة" [ngModel]="status"> </text-box>
+                        <text-box inputType="textArea" name="note" key="ملاحظات" [ngModel]="note"> </text-box>
+                    </div>
+
+                    </div>
+
+			</form>
+        </div>
+        <div class="col-md-2">
+
+
+        </div>
+    </div>
+</div>

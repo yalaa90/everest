@@ -1,0 +1,12 @@
+﻿<div *ngIf="isList">
+
+  <div (click)="addRow()">+</div>
+  <p-dataTable #dt [value]="dataSource" row="20"  (onRowDblclick)="onRecordClick($event)"
+               (onRowSelect)="(onRecordSelected($event))" dir="rtl" [editable]="true" selectionMode="single" >
+
+
+    <p-column [field]="column.field" [header]="column.header" *ngFor="let column of columns" [filter]="column.filter" [editable]="column.editable" ></p-column>
+
+  </p-dataTable>
+
+</div>

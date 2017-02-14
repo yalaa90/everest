@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col">
+      <h1 class="text-center">الادوية</h1>
+      <form [formGroup]="formR"  >
+        <div class="form-group-sm">
+          <lu-bar (submit)="saveForm()" (delete)="deleteForm()" (new)="newForm()" (isList)="changeShowType()"> </lu-bar>
+          <grid *ngIf="isList==true" [dataSource]="dataSource" [columns]="columns"
+                (recordClick)="onRecordDbClick($event)" (recordSelected)="onRecordSeleced($event)"></grid>
+          <div *ngIf="isList==false">
+            <text-box inputType="textBox" name="code" formControlName="code" key="كود"></text-box>
+            <text-box inputType="textBox" name="name" formControlName="name" key="اسم"></text-box>
+            <text-box inputType="select" name="disease" [selectItems]="diseaseType" formControlName="disease"
+                      key="نوع المرض"></text-box>
+            <text-box inputType="select" name="medicineType" [selectItems]="medicineTypeItems" formControlName="medicineType"
+                      key="نوع الدواء"></text-box>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2">
+
+
+    </div>
+  </div>
+</div>

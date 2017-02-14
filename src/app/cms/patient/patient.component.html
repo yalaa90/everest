@@ -1,0 +1,44 @@
+﻿
+<div class="container" >
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col">
+      <h1 class="text-center">المريض</h1>
+      <form  [formGroup]="formR"  >
+        <div class="form-group-sm" >
+          <lu-bar (submit)="saveForm()" (delete)="deleteForm()" (new)="newForm()" (isList)="changeShowType()"> </lu-bar>
+          <grid *ngIf="isList==true" [dataSource]="dataSource"  [columns]="columns" (recordClick)="onRecordDbClick($event)" (recordSelected)="onRecordSeleced($event)"></grid>
+          <div *ngIf="isList==false">
+
+                    <text-box inputType="textBox" name="code" formControlName="code" key="رمز"> </text-box>
+
+                    <text-box inputType="textBox" name="name" formControlName="name" key="اسم"> </text-box>
+
+                    <text-box inputType="mobile" name="mobile" formControlName="mobile" key="موبيل"> </text-box>
+
+                    <text-box inputType="number" name="iDentification" formControlName="iDentification" [maxlength]="14" key="رقم البطاقة"> </text-box>
+
+                    <text-box inputType="mail" name="mail" formControlName="mail" key="الايميل"></text-box>
+
+                    <text-box inputType="date" name="birthDate" formControlName="birthDate" key="تاريخ الميلاد"></text-box>
+
+                    <text-box inputType="gender" name="gender" formControlName="gender" key="الجنس"></text-box>
+
+                    <text-box inputType="textBox" name="address" formControlName="address" key="العنوان"> </text-box>
+
+                    <text-box inputType="textBox" name="job" formControlName="job" key="الوظيفة"> </text-box>
+
+                    <text-box inputType="textArea" name="note" formControlName="note" key="ملاحظات"> </text-box>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2">
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+﻿<div class="form-group text-right col-xs-5 right" >
+    <label for="id" >:{{key}}</label>
+    <span >
+
+        <input *ngIf="inputType=='textBox'" [attr.id]="'id'" [attr.name]="name"  type="text"  [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" [attr.maxlength]="maxlength" class="text-right form-control"/>
+
+        <textarea *ngIf="inputType=='textArea'" [attr.id]="id" [attr.name]="name" [cols]="cols" [ngModel]="textValue" (change)="dochange($event)" [rows]="rows"  [attr.maxlength]="maxlength" class="text-right form-control">test</textarea>
+
+        <input *ngIf="inputType=='dateTime'" [attr.id]="id" [attr.name]="name" type="datetime" [ngModel]="textValue" (change)="dochange($event)" [attr.maxlength]="8" class="text-right  date "/>
+
+        <input *ngIf="inputType=='mobile'" [attr.id]="id" [attr.name]="name" type="tel" [ngModel]="textValue" (change)="dochange($event)" [attr.maxlength]="maxlength" (keypress)="_keypressNumber($event)" class="text-right form-control"/>
+
+        <input *ngIf="inputType=='number'" [attr.id]="id" [attr.name]="name" type="text"  [ngModel]="textValue"   (change)="dochange($event)"   [attr.maxlength]="maxlength"  (keypress)="_keypressNumber($event)" class="text-right form-control"  />
+
+        <input *ngIf="inputType=='mail'" [attr.id]="'id'" [attr.name]="name" type="email" [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" [attr.maxlength]="maxlength" class="text-right form-control"/>
+
+        <input *ngIf="inputType=='date'" [attr.id]="'id'" [attr.name]="name" type="date" [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" [attr.maxlength]="10" (keypress)="_keypressDate" class="text-right form-control"/>
+
+         <input *ngIf="inputType=='check'" [attr.id]="'id'" [attr.name]="name" type="checkbox" [ngModel]="textValue" (change)="dochangeCheck($event)" (blur)="doit()"  class="checkbox" />
+        <span *ngIf="inputType=='radio'" >
+            <br />
+            <span *ngFor="let item of radioItems">
+                <input [attr.id]="'id'" [attr.name]="name" type="radio" [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" value="item" class="radio-inline"  /> {{item}}
+            </span>
+       </span>
+
+         <span *ngIf="inputType=='gender'" >
+            <br />
+             <input [attr.id]="'id'" [attr.name]="name" type="radio" [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" value="male" class="radio-inline" /> ذكر
+
+             <input [attr.id]="'id'" [attr.name]="name" type="radio" [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" value="female" checked class="radio-inline" /> انثى
+
+        </span>
+
+
+        <span *ngIf="inputType=='select'"  class="text-right">
+            <select   [attr.id]="'id'" [attr.name]="name"  [ngModel]="textValue" (change)="dochange($event)" (blur)="doit()" class="form-control" >
+               <option *ngFor="let sItem of selectItems" class="right"> {{sItem}}</option>
+            </select>
+        </span>
+
+           </span>
+
+
+
+</div>

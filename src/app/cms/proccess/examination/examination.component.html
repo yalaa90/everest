@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col">
+      <h1 class="text-center">الاستقبال</h1>
+      <form #form="ngForm" (onload)="ngLoad(form)">
+        <div class="form-group-sm">
+          <lu-bar (submit)="submitForm(form)" (delete)="reset()" (isList)="changeShowType()"></lu-bar>
+          <grid [isList]="isList" [dataSource]="dataSource" [columns]="columns"
+                (recordClick)="onRecordDbClick($event)" (recordSelected)="onRecordSeleced($event)"></grid>
+          <div *ngIf="isList==false">
+            <text-box inputType="number" name="code" [ngModel]="code" key="كود الاستقبال"></text-box>
+            <text-box inputType="number" name="bookingCode" [ngModel]="bookingCode" key="كود الحجز"></text-box>
+            <text-box inputType="number" name="patientcode" [ngModel]="patientcode" key="كود المريض"></text-box>
+            <text-box inputType="textBox" name="name" [ngModel]="name" key="اسم المريض"></text-box>
+            <text-box inputType="check" name="immediately" [ngModel]="immediately" key="كشف مستعجل"></text-box>
+
+
+            <text-box inputType="date" name="meetingDate" [ngModel]="meetingDate" key="موعد الكشف" ></text-box>
+            <text-box inputType="radio" name="period" [radioItems]="periodItems" [ngModel]="period" key="الفترة"></text-box>
+            <text-box inputType="select" name="examType" [selectItems]="examTypeItem" [ngModel]="examType" key="نوع الكشف"></text-box>
+
+            <text-box inputType="number" name="total" [ngModel]="total" key="الاجمالى"> </text-box>
+            <text-box inputType="number" name="paid" [ngModel]="paid" key="المدفوع"> </text-box>
+            <text-box inputType="number" name="rest" [ngModel]="rest" key="الباقى"> </text-box>
+            <text-box inputType="check" name="done" [ngModel]="done" key="تم الكشف"></text-box>
+            <text-box inputType="textArea" name="note" [ngModel]="note" key="ملاحظات"> </text-box>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2">
+
+
+    </div>
+  </div>
+</div>

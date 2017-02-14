@@ -1,0 +1,5 @@
+﻿<form [formGroup]="formR">
+<dropd [items]="cities" formControlName="selectedCity" key="test"></dropd>
+{{selectedCity | json}}
+  <button (click)="clickfn()">test</button>
+</form>

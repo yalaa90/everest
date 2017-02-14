@@ -1,0 +1,10 @@
+<form #form="ngForm">
+
+    <text-box inputType="textBox" name="code" [ngModel]="code"> </text-box> 
+   
+    <text-box inputType="textBox" name="name" [ngModel]="name"> </text-box> 
+
+    <text-box inputType="textBox" name="test" [ngModel]="test"> </text-box> 
+	
+	 <lu-bar (submit)="submitForm(form)"> </lu-bar>
+</form>
